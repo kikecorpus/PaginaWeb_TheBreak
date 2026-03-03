@@ -1,0 +1,42 @@
+/* ──────────────────────────────────────────────────────
+   THE BREAK · DESIGN TOKENS & VARIABLES
+   Color palette, typography, spacing
+   ────────────────────────────────────────────────────── */
+
+:root {
+  /* ── COLORS: PRIMARY ── */
+  --verde:      #6FA320;
+  --verde-lt:   #8FC235;
+  --verde-dk:   #4E7A10;
+  --verde-pale: #EFF5E0;
+  --verde-mid:  #C8DC8A;
+  --verde-bg:   #243D0A;
+
+  /* ── COLORS: ACCENTS ── */
+  --coral:      #D95F3B;
+  --coral-lt:   #F07A5A;
+  --amber:      #E8A020;
+  --amber-lt:   #F5C040;
+
+  /* ── COLORS: NEUTRALS ── */
+  --cafe:       #3E2A10;
+  --cafe-lt:    #5C3F1C;
+  --crema:      #F8F5EE;
+  --crema2:     #EDE6D4;
+  --crema3:     #E6F1CB;
+  --blanco:     #ffffff;
+  --texto:      #2E1E0A;
+  --muted:      #7A6A54;
+  --border:     #D8D0BE;
+  --border-v:   #AECB6A;
+
+  /* ── TYPOGRAPHY ── */
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-sans: 'Jost', sans-serif;
+
+  /* ── TRANSITIONS ── */
+  --transition-fast: 0.2s;
+  --transition-base: 0.3s;
+  --transition-smooth: 0.4s;
+  --transition-slow: 0.75s;
+}

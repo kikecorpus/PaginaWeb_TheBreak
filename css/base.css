@@ -1,0 +1,117 @@
+/* ──────────────────────────────────────────────────────
+   THE BREAK · BASE STYLES
+   Reset, typography, global layout
+   ────────────────────────────────────────────────────── */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--crema);
+  color: var(--texto);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.7;
+  position: relative;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--verde);
+  border-radius: 4px;
+}
+
+/* Noise texture overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+}
+
+/* Utility classes */
+.btn {
+  padding: 0.8rem 2rem;
+  border-radius: 100px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  transition: all var(--transition-base);
+  cursor: pointer;
+  border: none;
+  font-family: var(--font-sans);
+  display: inline-block;
+}
+
+.btn-primary {
+  background: var(--cafe);
+  color: var(--blanco);
+}
+
+.btn-primary:hover {
+  background: var(--cafe-lt);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(62, 42, 16, 0.25);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--verde-dk);
+  border: 1.5px solid var(--verde);
+}
+
+.btn-outline:hover {
+  background: var(--verde);
+  color: var(--blanco);
+  transform: translateY(-2px);
+}
+
+.btn-verde {
+  background: var(--verde);
+  color: var(--blanco);
+}
+
+.btn-verde:hover {
+  background: var(--verde-lt);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(111, 163, 32, 0.35);
+}
+
+.btn-coral {
+  background: var(--coral);
+  color: var(--blanco);
+}
+
+.btn-coral:hover {
+  background: var(--coral-lt);
+  transform: translateY(-2px);
+}
+
+/* Reveal animation class */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity var(--transition-slow) ease, transform var(--transition-slow) ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}

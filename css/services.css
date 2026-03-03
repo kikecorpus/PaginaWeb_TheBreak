@@ -1,0 +1,186 @@
+/* ──────────────────────────────────────────────────────
+   THE BREAK · SERVICES SECTION STYLES
+   Service cards and layout
+   ────────────────────────────────────────────────────── */
+
+#servicios {
+  background: linear-gradient(170deg, #FDF6E8 0%, #F5EDD0 100%);
+  position: relative;
+}
+
+#servicios::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--verde), var(--verde-mid), var(--amber));
+}
+
+#servicios::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--amber), var(--verde-mid), var(--verde));
+}
+
+.services-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: end;
+  margin-bottom: 4rem;
+}
+
+.services-intro p {
+  color: var(--muted);
+  font-weight: 300;
+  font-size: 0.97rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+/* Service card */
+.svc-card {
+  background: var(--blanco);
+  border: 1.5px solid var(--border);
+  border-radius: 20px;
+  padding: 2.8rem 2rem 2.2rem;
+  transition: all var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+.svc-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--card-accent, var(--verde));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-smooth);
+}
+
+.svc-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 24px 60px rgba(92, 58, 26, 0.12);
+  border-color: transparent;
+}
+
+.svc-card:hover::before {
+  transform: scaleX(1);
+}
+
+.svc-card:nth-child(1) {
+  --card-accent: var(--coral);
+}
+
+.svc-card:nth-child(2) {
+  --card-accent: var(--verde);
+}
+
+.svc-card:nth-child(3) {
+  --card-accent: var(--amber);
+}
+
+.svc-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  margin-bottom: 1.4rem;
+}
+
+.svc-card:nth-child(1) .svc-icon {
+  background: rgba(217, 95, 59, 0.1);
+}
+
+.svc-card:nth-child(2) .svc-icon {
+  background: rgba(111, 163, 32, 0.12);
+}
+
+.svc-card:nth-child(3) .svc-icon {
+  background: rgba(232, 160, 32, 0.12);
+}
+
+.svc-card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--cafe);
+  margin-bottom: 0.6rem;
+}
+
+.svc-card p {
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-weight: 300;
+  line-height: 1.75;
+}
+
+.svc-details {
+  margin-top: 1.2rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--border);
+}
+
+.svc-details h4 {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  margin-bottom: 0.7rem;
+  font-weight: 500;
+}
+
+.svc-includes {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.svc-includes li {
+  font-size: 0.84rem;
+  color: var(--texto);
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.svc-includes li::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--card-accent, var(--verde));
+  flex-shrink: 0;
+}
+
+.svc-tag {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 0.74rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--card-accent, var(--verde));
+  text-transform: uppercase;
+  border: 1px solid currentColor;
+  padding: 0.28rem 0.75rem;
+  border-radius: 100px;
+}

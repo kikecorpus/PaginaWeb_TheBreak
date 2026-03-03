@@ -1,0 +1,45 @@
+/* ──────────────────────────────────────────────────────
+   THE BREAK · FOOTER STYLES
+   Footer layout, links, copyright
+   ────────────────────────────────────────────────────── */
+
+footer {
+  background: linear-gradient(135deg, var(--verde-bg) 0%, #1A3005 100%);
+  padding: 3rem 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer-logo .logo-name {
+  color: var(--blanco);
+  font-size: 1.4rem;
+}
+
+.footer-logo .logo-tag {
+  color: var(--verde-mid);
+}
+
+footer p {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.82rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.8rem;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  transition: color var(--transition-fast);
+}
+
+.footer-links a:hover {
+  color: var(--verde-mid);
+}

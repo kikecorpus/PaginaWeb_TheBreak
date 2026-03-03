@@ -1,0 +1,148 @@
+/* ──────────────────────────────────────────────────────
+   THE BREAK · TESTIMONIALS SECTION STYLES
+   Customer testimonials, avatars, ratings
+   ────────────────────────────────────────────────────── */
+
+#experiencias {
+  background: linear-gradient(135deg, var(--verde-bg) 0%, #1A3005 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+#experiencias::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(111, 163, 32, 0.25), transparent 70%);
+  pointer-events: none;
+}
+
+#experiencias::after {
+  content: '';
+  position: absolute;
+  bottom: -80px;
+  left: -80px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(232, 160, 32, 0.12), transparent 70%);
+  pointer-events: none;
+}
+
+#experiencias .s-label {
+  color: var(--verde-mid);
+}
+
+#experiencias .s-title {
+  color: var(--blanco);
+}
+
+#experiencias .s-title em {
+  color: var(--verde-mid);
+}
+
+#experiencias .s-line {
+  background: linear-gradient(90deg, var(--verde), var(--verde-mid));
+}
+
+.exp-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: end;
+  margin-bottom: 4rem;
+}
+
+.exp-intro p {
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 300;
+  font-size: 0.97rem;
+}
+
+.exp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+/* Testimonial card */
+.exp-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(143, 194, 53, 0.2);
+  border-radius: 18px;
+  padding: 2.2rem;
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.exp-card::before {
+  content: '"';
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  font-family: var(--font-serif);
+  font-size: 7rem;
+  color: rgba(143, 194, 53, 0.18);
+  line-height: 1;
+}
+
+.exp-card:hover {
+  background: rgba(111, 163, 32, 0.1);
+  transform: translateY(-4px);
+  border-color: rgba(143, 194, 53, 0.4);
+}
+
+.stars {
+  color: var(--amber-lt);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+}
+
+.exp-card blockquote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.exp-author {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--verde), var(--verde-lt));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--blanco);
+  flex-shrink: 0;
+}
+
+.exp-author strong {
+  font-size: 0.88rem;
+  color: var(--blanco);
+  display: block;
+}
+
+.exp-author span {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.5);
+}
