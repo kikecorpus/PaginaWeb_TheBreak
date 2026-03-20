@@ -1,6 +1,5 @@
 /* ──────────────────────────────────────────────────────
-   THE BREAK · NAVBAR STYLES
-   Navigation, logo, hamburger menu
+   THE BREAK · NAVBAR STYLES (Alineado y Corregido)
    ────────────────────────────────────────────────────── */
 
 nav {
@@ -10,9 +9,12 @@ nav {
   right: 0;
   z-index: 100;
   display: flex;
-  align-items: center;
+  
+  /* CRUCIAL: Centra verticalmente el Logo, Enlaces y Botón */
+  align-items: center; 
+  
   justify-content: space-between;
-  padding: 1.2rem 6%;
+  padding: 1.2rem 6%; /* Mantén tu padding horizontal */
   background: rgba(250, 246, 239, 0.9);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
@@ -25,11 +27,13 @@ nav.scrolled {
   box-shadow: 0 2px 24px rgba(92, 58, 26, 0.07);
 }
 
-/* Logo */
+/* Logo - Alineación Reiniciada */
 .logo-wrap {
   display: flex;
   flex-direction: column;
   line-height: 1;
+  margin: 0; /* Asegura que no haya márgenes externos */
+  padding: 0;
 }
 
 .logo-name {
@@ -46,13 +50,22 @@ nav.scrolled {
   text-transform: uppercase;
   color: var(--coral);
   font-weight: 500;
+  margin-top: -2px; /* Ajuste fino si el serif tiene mucho aire arriba */
 }
 
-/* Navigation links */
+/* Navigation links - Alineación y Espaciado */
 .nav-links {
   display: flex;
   gap: 2.4rem;
   list-style: none;
+  align-items: center; /* Alinea los enlaces internamente también */
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  display: flex;
+  align-items: center; /* Centra el contenido de cada li */
 }
 
 .nav-links a {
@@ -63,27 +76,52 @@ nav.scrolled {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   transition: color var(--transition-fast);
+  
+  /* Un poco de padding vertical ayuda a la alineación visual sin mover el flex */
+  padding: 0.5rem 0; 
+  display: inline-block;
 }
 
 .nav-links a:hover {
   color: var(--cafe);
 }
 
+/* Botón de Llamado a la Acción (CTA) */
 .nav-cta {
   background: var(--verde) !important;
   color: var(--blanco) !important;
-  padding: 0.55rem 1.3rem !important;
+  
+  /* Ajuste de padding para que se vea bien pero no rompa la alineación */
+  padding: 0.6rem 1.4rem !important; 
+  
   border-radius: 100px !important;
   font-size: 0.78rem !important;
-  transition: background var(--transition-fast) !important;
+  font-weight: 500 !important; /* Un poco más de peso */
+  letter-spacing: 0.05em !important;
+  transition: background var(--transition-fast), transform var(--transition-fast) !important;
+  display: inline-flex !important; /* Mejor para centrar texto dentro */
+  align-items: center;
 }
 
 .nav-cta:hover {
   background: var(--verde-lt) !important;
-  color: var(--blanco) !important;
+  transform: translateY(-1px); /* Efecto sutil */
 }
 
-/* Hamburger menu */
+/* Icono de Instagram (Corrección Anterior) */
+img.nav-instagram {
+  width: 20px; /* Tamaño sutil */
+  height: 20px;
+  display: block; 
+  transition: opacity var(--transition-fast);
+  margin-left: -0.5rem; /* Acércalo un poco al link anterior si quieres */
+}
+
+.nav-instagram:hover {
+  opacity: 0.7;
+}
+
+/* Hamburger menu (Sin cambios) */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -91,14 +129,7 @@ nav.scrolled {
   cursor: pointer;
   background: none;
   border: none;
-}
-
-.hamburger span {
-  display: block;
-  width: 24px;
-  height: 1.5px;
-  background: var(--cafe);
-  transition: 0.3s;
+  padding: 0;
 }
 
 .hamburger.open span:nth-child(1) {
